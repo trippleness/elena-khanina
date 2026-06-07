@@ -1231,12 +1231,32 @@
 
     /* Recognition note — mobile */
     .recognition-note {
-      padding: 28px 22px;
-      border-radius: 14px;
+      padding: 32px 28px;
+      border-radius: 20px;
     }
     .recognition-note::before { content: none; }
-    .recognition-note .note-line-1 { font-size: 17px; line-height: 1.5; }
-    .recognition-note .note-line-2 { font-size: 13px; }
+    .recognition-note-inner { text-align: left; }
+    .recognition-note .note-line-1 {
+      font-size: 18px;
+      line-height: 1.45;
+      margin-bottom: 16px;
+      font-weight: 400;
+    }
+    .recognition-note .note-line-1 strong {
+      display: block;
+      font-size: 22px;
+      font-weight: 700;
+      font-style: normal;
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+    .recognition-note .note-divider {
+      width: 32px;
+      height: 1px;
+      background: rgba(255,255,255,0.25);
+      margin: 0 0 16px;
+    }
+    .recognition-note .note-line-2 { font-size: 13.5px; line-height: 1.65; }
 
     /* Process human intro — mobile */
     .process-human-intro {
