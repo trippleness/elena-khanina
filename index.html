@@ -1135,16 +1135,16 @@
     /* Hero: photo on top, text below */
     .hero {
       grid-template-columns: 1fr;
-      grid-template-rows: 380px auto;
+      grid-template-rows: 400px auto;
       min-height: auto;
       padding-top: 64px;
     }
     .hero-right {
-      height: 380px;
+      height: 400px;
       order: -1;
     }
     .hero-left {
-      padding: 40px 40px 48px;
+      padding: 40px 40px 56px;
       justify-content: flex-start;
     }
 
@@ -1162,6 +1162,13 @@
 
     /* Name block in hero */
     .hero-name-block { left: 24px; right: 24px; bottom: 24px; }
+
+    /* Process human intro */
+    .process-human-intro { padding: 28px 32px; }
+    .process-human-intro p { font-size: 16px; }
+
+    /* Recognition note */
+    .recognition-note { padding: 40px 36px; }
   }
 
   /* ---- MOBILE: ≤600px ---- */
@@ -1172,12 +1179,12 @@
 
     /* Hero */
     .hero {
-      grid-template-rows: 300px auto;
+      grid-template-rows: 280px auto;
       padding-top: 64px;
     }
-    .hero-right { height: 300px; }
-    .hero-left  { padding: 28px 20px 40px; }
-    .hero h1    { font-size: clamp(24px, 6vw, 34px); }
+    .hero-right { height: 280px; }
+    .hero-left  { padding: 28px 20px 44px; }
+    .hero h1    { font-size: clamp(22px, 6vw, 32px); line-height: 1.25; }
     .hero-sub   { font-size: 15px; }
     .hero-badge { font-size: 11px; padding: 5px 13px; }
     .cert-pill  { font-size: 12px; padding: 5px 11px; }
@@ -1185,80 +1192,127 @@
     .hero-cta   { flex-direction: column; align-items: stretch; }
     .btn-ghost  { text-align: center; }
     .hero-name-block { left: 16px; right: 16px; bottom: 16px; padding: 14px 18px; }
-    .hero-name  { font-size: 18px; }
+    .hero-name  { font-size: 17px; }
+    .hero-title { font-size: 12px; }
 
     /* Sections */
     .section        { padding: 48px 20px; }
     .cta-section    { padding: 48px 20px; }
-    .section-intro  { margin-bottom: 32px; }
+    .section-title  { font-size: clamp(26px, 7vw, 38px); }
+    .section-intro  { font-size: 15px; margin-bottom: 28px; }
 
     /* All grids → 1 column */
-    .situations-grid { grid-template-columns: 1fr; }
+    .situations-grid { grid-template-columns: 1fr; gap: 12px; }
     .services-grid   { grid-template-columns: 1fr; }
-    .reviews-grid    { grid-template-columns: 1fr; }
+    .reviews-grid    { grid-template-columns: 1fr; gap: 14px; }
     .about-grid      { grid-template-columns: 1fr; gap: 36px; }
     .process-ltv     { grid-template-columns: 1fr; gap: 12px; }
     .about-stat-row  { grid-template-columns: repeat(3, 1fr); }
 
+    /* Situation cards */
+    .situation-card { padding: 28px 22px 24px; }
+    .situation-icon { width: 32px; height: 32px; margin-bottom: 16px; }
+    .situation-icon svg { width: 32px; height: 32px; }
+    .situation-card h3 { font-size: 16px; }
+    .situation-card p  { font-size: 13.5px; }
+
+    /* Recognition note — mobile */
+    .recognition-note {
+      padding: 28px 22px;
+      border-radius: 14px;
+    }
+    .recognition-note::before { font-size: 80px; top: -10px; left: 12px; }
+    .recognition-note .note-line-1 { font-size: 17px; line-height: 1.5; }
+    .recognition-note .note-line-2 { font-size: 13px; }
+
+    /* Process human intro — mobile */
+    .process-human-intro {
+      padding: 20px 20px 20px 20px;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 36px;
+    }
+    .process-human-intro::before { font-size: 56px; margin-top: 0; }
+    .process-human-intro p { font-size: 16px; }
+
     /* Process line */
     .process-steps::before { left: 21px; }
     .step-num { width: 44px; height: 44px; font-size: 16px; }
-
-    /* Recognition note */
-    .recognition-note { padding: 32px 24px; }
-    .recognition-note::before { font-size: 120px; }
-    .recognition-note .note-line-1 { font-size: 18px; }
+    .step-content h3 { font-size: 16px; }
+    .step-content p  { font-size: 13.5px; }
 
     /* Review cards — mobile */
-    .reviews-grid { gap: 16px; }
     .review-card {
-      padding: 28px 22px 22px;
+      padding: 24px 20px 20px;
       background: #fdf8f3;
       border: none;
       border-radius: 16px;
       box-shadow: 0 2px 12px rgba(61,42,28,0.08);
-      position: relative;
       overflow: hidden;
     }
     .review-card::before {
       content: '\201C';
       font-family: 'Playfair Display', serif;
-      font-size: 96px;
+      font-size: 80px;
       line-height: 1;
       color: var(--accent);
-      opacity: 0.18;
+      opacity: 0.15;
       position: absolute;
-      top: 8px;
-      left: 14px;
+      top: 6px;
+      left: 12px;
     }
-    .review-segment { font-size: 10px; letter-spacing: 0.1em; margin-bottom: 14px; }
-    .review-text { font-size: 15px; line-height: 1.7; padding-left: 4px; }
-    .review-result { font-size: 12.5px; border-radius: 8px; padding: 10px 14px; }
+    .review-segment { font-size: 10px; letter-spacing: 0.1em; margin-bottom: 12px; }
+    .review-text { font-size: 15px; line-height: 1.7; }
+    .review-result { font-size: 13px; border-radius: 8px; padding: 12px 14px; }
 
     /* About */
-    .about-stat-row { grid-template-columns: repeat(3, 1fr); }
-    .stat-num { font-size: 28px; }
-    .stat-label { font-size: 11px; }
+    .about-stat-row { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .stat-num { font-size: 26px; }
+    .stat-label { font-size: 10.5px; }
+
+    /* Cert items */
+    .cert-item { gap: 14px; }
+    .cert-item .cert-icon { width: 26px; height: 26px; }
+    .cert-item .cert-icon svg { width: 26px; height: 26px; }
+    .cert-item h4 { font-size: 15px; }
+    .cert-item p  { font-size: 13px; }
 
     /* Services */
     .service-header { padding: 24px 20px 20px; }
     .service-body   { padding: 20px 20px 24px; }
     .service-card h3 { font-size: 20px; }
     .service-price { font-size: 22px; }
+    .service-desc { font-size: 13.5px; }
+    .service-results li { font-size: 13px; }
 
     /* FAQ */
     .faq-q  { padding: 18px 20px; font-size: 15px; }
-    .faq-a  { padding: 16px 20px 20px; }
+    .faq-a  { padding: 16px 20px 20px; font-size: 14px; }
 
     /* CTA */
-    .cta-contacts { flex-direction: column; align-items: stretch; }
-    .cta-btn { justify-content: center; }
-    .cta-trust { gap: 12px; }
-    .trust-item { font-size: 13px; }
+    .cta-section h2 { font-size: clamp(24px, 7vw, 36px); }
+    .cta-sub { font-size: 15px; }
+    .cta-contacts { flex-direction: column; align-items: stretch; gap: 10px; }
+    .cta-btn { justify-content: center; padding: 14px 20px; }
+    .cta-trust { gap: 10px; }
+    .trust-item { font-size: 12.5px; text-align: center; }
+    .cta-price-note { font-size: 13.5px; }
 
     /* LTV cards */
-    .ltv-card { padding: 20px 16px; }
-    .ltv-card .ltv-val { font-size: 26px; }
+    .ltv-card { padding: 18px 16px; }
+    .ltv-card .ltv-val { font-size: 24px; }
+    .ltv-card .ltv-label { font-size: 12px; }
+  }
+
+  /* ---- SMALL MOBILE: ≤380px ---- */
+  @media (max-width: 380px) {
+    .hero h1 { font-size: 21px; }
+    .hero-left { padding: 22px 16px 36px; }
+    .section { padding: 40px 16px; }
+    .cta-section { padding: 40px 16px; }
+    .hero-name { font-size: 15px; }
+    .about-stat-row { grid-template-columns: 1fr; gap: 8px; }
+    .stat-num { font-size: 28px; }
   }
 
   /* ===================== SCROLL TO TOP ===================== */
