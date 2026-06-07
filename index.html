@@ -735,20 +735,32 @@
 
   /* ===================== SCREEN 5 — PROCESS ===================== */
   .process-human-intro {
-    max-width: 580px;
     margin-bottom: 56px;
-    padding: 24px 28px;
-    border-left: 3px solid var(--accent);
+    padding: 36px 48px;
     background: rgba(139,94,60,0.04);
-    border-radius: 0 8px 8px 0;
+    border-radius: 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .process-human-intro::before {
+    content: '\201C';
+    font-family: 'Playfair Display', serif;
+    font-size: 80px;
+    line-height: 0.8;
+    color: var(--accent);
+    opacity: 0.4;
+    flex-shrink: 0;
+    margin-top: 8px;
   }
 
   .process-human-intro p {
     font-family: 'Playfair Display', serif;
-    font-size: 17px;
+    font-size: 18px;
     font-style: italic;
     color: var(--deep);
-    line-height: 1.7;
+    line-height: 1.75;
     margin: 0;
   }
 
@@ -847,6 +859,8 @@
     border-radius: 10px;
     padding: 28px 24px;
     position: relative;
+    display: flex;
+    flex-direction: column;
   }
 
   .review-segment {
@@ -865,18 +879,20 @@
     color: var(--deep);
     line-height: 1.65;
     margin-bottom: 20px;
+    flex: 1;
   }
 
   .review-result {
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 13.5px;
+    font-weight: 500;
     color: var(--green);
-    padding: 10px 14px;
+    padding: 14px 16px;
     background: rgba(61,90,71,0.08);
-    border-radius: 4px;
+    border-radius: 8px;
+    line-height: 1.6;
   }
 
-  .review-result::before { content: '✓ '; }
+  .review-result::before { content: '✓  '; font-weight: 700; }
 
   /* ===================== SCREEN 7 — FAQ ===================== */
   .faq-list {
@@ -1633,28 +1649,25 @@
 
   <div class="reviews-grid">
     <div class="review-card">
-      <div class="review-segment">Тревога / личное</div>
-      <p class="review-text">
-        «Пришла с паническими атаками — по ночам не могла спать, боялась выходить из дома.
-        Через 8 сессий атак не стало. Первый раз за 2 года нормально сплю.»
+      <div class="review-segment">Тревога и панические атаки</div>
+      <p class="review-text review-before">
+        «Пришла с ощущением, что тревога полностью управляет моей жизнью. Постоянно ждала нового приступа и почти перестала нормально спать.»
       </p>
-      <div class="review-result">Панические атаки прошли через 8 сессий</div>
+      <div class="review-result">Постепенно разобрались, что запускает тревогу, и научились с этим работать. Сейчас чувствую гораздо больше спокойствия и контроля.</div>
     </div>
     <div class="review-card">
-      <div class="review-segment">Отношения / пара</div>
-      <p class="review-text">
-        «Мы уже договорились о разводе, но попробовали. И — это звучит невероятно — мы просто не слышали
-        друг друга. Теперь слышим. Остались вместе.»
+      <div class="review-segment">Кризис в отношениях</div>
+      <p class="review-text review-before">
+        «Мы постоянно ссорились и уже всерьёз говорили о расставании.»
       </p>
-      <div class="review-result">Пара сохранилась, научились слышать друг друга</div>
+      <div class="review-result">На терапии увидели, что на самом деле стоит за конфликтами, и научились обсуждать сложные темы без взаимных обвинений.</div>
     </div>
     <div class="review-card">
-      <div class="review-segment">Поиск себя</div>
-      <p class="review-text">
-        «Внешне всё было нормально — работа, семья. Но я не понимал, чего хочу вообще.
-        После работы с Еленой появилось что-то вроде внутреннего компаса.»
+      <div class="review-segment">Потеря смысла и себя</div>
+      <p class="review-text review-before">
+        «Казалось, что живу по инерции и не понимаю, чего хочу дальше.»
       </p>
-      <div class="review-result">Появилась ясность в ценностях и направлении</div>
+      <div class="review-result">Работа помогла лучше понять свои потребности, ценности и начать принимать решения, которые действительно подходят мне.</div>
     </div>
   </div>
 
@@ -1683,6 +1696,18 @@
 
   <div class="faq-list">
     <details class="faq-item">
+      <summary class="faq-q">Что будет на первой встрече?</summary>
+      <p class="faq-a">
+        На первой встрече мы обсудим вашу ситуацию, определим запрос и поймём, каким может быть дальнейший план работы. Вам не нужно заранее готовиться или подбирать правильные слова.
+      </p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">А если я не знаю, с чего начать?</summary>
+      <p class="faq-a">
+        Это нормально. Многие приходят не с чётким запросом, а с ощущением, что что-то не так. На консультации мы вместе разберёмся, что именно вас беспокоит и в каком направлении двигаться дальше.
+      </p>
+    </details>
+    <details class="faq-item">
       <summary class="faq-q">Работает ли онлайн так же, как очно?</summary>
       <p class="faq-a">
         Да — это подтверждено исследованиями по КПТ и ЭФТ. Онлайн-формат не уступает очному по эффективности.
@@ -1709,25 +1734,19 @@
     <details class="faq-item">
       <summary class="faq-q">«Это не значит, что я слабый(-ая)?»</summary>
       <p class="faq-a">
-        <span class="faq-highlight">Нет.</span> Обращение к специалисту — это про эффективность, а не про слабость.
-        Хирурги делают операции себе? Нет. Психолог нужен не потому, что вы не справляетесь.
-        А потому что так — быстрее и надёжнее.
+        Обращение за поддержкой — это не признак слабости. Это способ разобраться в ситуации не в одиночку и быстрее увидеть то, что сложно заметить изнутри.
       </p>
     </details>
     <details class="faq-item">
       <summary class="faq-q">Я боюсь рассказывать о себе — вдруг это останется где-то?</summary>
       <p class="faq-a">
-        Конфиденциальность — этическая норма и профессиональный стандарт АКПП.
-        Ничто из того, что вы говорите, не выходит за пределы сессии.
-        На первой встрече мы обговариваем это отдельно.
+        Конфиденциальность — обязательная часть профессиональной практики. Всё, что обсуждается на сессии, остаётся между нами.
       </p>
     </details>
     <details class="faq-item">
       <summary class="faq-q">Что если вы мне не подойдёте?</summary>
       <p class="faq-a">
-        Первая сессия — это знакомство. Вы ничем не обязаны продолжать.
-        Терапевтический альянс важен, и если после первой встречи вы чувствуете, что не ваш формат —
-        скажите прямо. Это нормально.
+        Терапия работает лучше всего тогда, когда между клиентом и психологом есть доверие. Поэтому первая встреча — это возможность познакомиться и понять, комфортно ли вам со мной работать дальше.
       </p>
     </details>
   </div>
@@ -1739,12 +1758,10 @@
      Цель: один простой шаг к первой сессии
      ============================================================ -->
 <section class="cta-section" id="cta">
-  <div class="section-label">Первый шаг</div>
-  <h2>Напишите мне —<br>обсудим ваш запрос<br>и запишемся на <em>первую сессию</em></h2>
+  <h2>Первый шаг может быть<br>проще, <em>чем кажется</em></h2>
 
   <p class="cta-sub">
-    Без обязательств. Просто напишите, что происходит — в двух словах или подробно.
-    Отвечу в течение дня.
+    Напишите мне в удобный мессенджер и коротко расскажите, что происходит.
   </p>
 
   <div class="cta-contacts">
@@ -1778,13 +1795,10 @@
     </a>
   </div>
 
-  <p class="cta-price-note">Стоимость от 5 000 ₽ — никаких скрытых платежей</p>
+  <p class="cta-price-note">Стоимость обсуждается заранее — никаких неожиданных расходов.</p>
 
   <div class="cta-trust">
-    <span class="trust-item">Член АКПП и СЭФТ</span>
-    <span class="trust-item">Только онлайн — из любой точки</span>
-    <span class="trust-item">Индивидуально и для пар</span>
-    <span class="trust-item">Конфиденциально</span>
+    <span class="trust-item">10+ лет практики • Член АКПП и СЭФТ • Индивидуальная и парная терапия • Конфиденциально</span>
   </div>
 </section>
 
