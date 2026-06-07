@@ -1148,12 +1148,12 @@
     /* Hero: photo on top, text below */
     .hero {
       grid-template-columns: 1fr;
-      grid-template-rows: 400px auto;
+      grid-template-rows: 520px auto;
       min-height: auto;
       padding-top: 64px;
     }
     .hero-right {
-      height: 400px;
+      height: 520px;
       order: -1;
     }
     .hero-left {
@@ -1168,7 +1168,7 @@
     /* Grids → 2 columns on tablet */
     .situations-grid { grid-template-columns: repeat(2, 1fr); }
     .services-grid   { grid-template-columns: 1fr; }
-    .reviews-grid    { grid-template-columns: repeat(2, 1fr); }
+    .reviews-grid    { grid-template-columns: 1fr; }
     .about-grid      { grid-template-columns: 1fr; gap: 48px; }
     .process-ltv     { grid-template-columns: repeat(3, 1fr); }
     .about-stat-row  { grid-template-columns: repeat(3, 1fr); }
@@ -1182,6 +1182,7 @@
 
     /* Recognition note */
     .recognition-note { padding: 40px 36px; }
+    .recognition-note::before { content: none; }
   }
 
   /* ---- MOBILE: ≤600px ---- */
