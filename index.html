@@ -1253,17 +1253,18 @@
     .review-card::before {
       content: '\201C';
       font-family: 'Playfair Display', serif;
-      font-size: 80px;
+      font-size: 72px;
       line-height: 1;
       color: var(--accent);
       opacity: 0.15;
       position: absolute;
-      top: 6px;
+      top: 44px;
       left: 12px;
+      pointer-events: none;
     }
-    .review-segment { font-size: 10px; letter-spacing: 0.1em; margin-bottom: 12px; }
-    .review-text { font-size: 15px; line-height: 1.7; }
-    .review-result { font-size: 13px; border-radius: 8px; padding: 12px 14px; }
+    .review-segment { font-size: 10px; letter-spacing: 0.1em; margin-bottom: 14px; position: relative; z-index: 1; }
+    .review-text { font-size: 15px; line-height: 1.7; position: relative; z-index: 1; }
+    .review-result { font-size: 13px; border-radius: 8px; padding: 12px 14px; position: relative; z-index: 1; }
 
     /* About */
     .about-stat-row { grid-template-columns: repeat(3, 1fr); gap: 8px; }
