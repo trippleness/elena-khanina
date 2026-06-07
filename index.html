@@ -386,27 +386,39 @@
   .situations-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: var(--border);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    overflow: hidden;
+    gap: 16px;
     margin-bottom: 48px;
   }
 
   .situation-card {
     background: var(--cream);
-    padding: 32px 28px;
-    transition: background 0.2s;
+    padding: 40px 32px 36px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    transition: background 0.2s, box-shadow 0.2s;
   }
 
   .section-alt .situation-card { background: var(--section-bg); }
 
-  .situation-card:hover { background: rgba(139,94,60,0.05); }
+  .situation-card:hover {
+    background: rgba(139,94,60,0.04);
+    box-shadow: 0 4px 20px rgba(61,42,28,0.07);
+  }
 
   .situation-icon {
-    font-size: 24px;
-    margin-bottom: 16px;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 24px;
+    color: var(--accent);
+  }
+  .situation-icon svg {
+    width: 40px;
+    height: 40px;
+    stroke: var(--accent);
+    fill: none;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
   }
 
   .situation-card h3 {
@@ -414,8 +426,8 @@
     font-size: 18px;
     font-weight: 400;
     color: var(--deep);
-    margin-bottom: 10px;
-    line-height: 1.3;
+    margin-bottom: 14px;
+    line-height: 1.4;
   }
 
   .situation-card p {
@@ -545,7 +557,21 @@
     border-radius: 0 6px 6px 0;
   }
 
-  .cert-item .cert-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+  .cert-item .cert-icon {
+    flex-shrink: 0;
+    margin-top: 2px;
+    width: 32px;
+    height: 32px;
+  }
+  .cert-item .cert-icon svg {
+    width: 32px;
+    height: 32px;
+    stroke: var(--accent);
+    fill: none;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
 
   .cert-item h4 {
     font-size: 15px;
@@ -593,7 +619,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 24px;
-    margin-bottom: 40px;
+    margin-bottom: 0;
   }
 
   .service-card {
@@ -601,6 +627,8 @@
     border-radius: 10px;
     overflow: hidden;
     transition: box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
   }
 
   .service-card:hover {
@@ -610,6 +638,7 @@
   .service-header {
     padding: 32px 32px 24px;
     border-bottom: 1px solid var(--border);
+    flex: 1;
   }
 
   .service-type {
@@ -626,7 +655,14 @@
     font-size: 24px;
     font-weight: 400;
     color: var(--deep);
-    margin-bottom: 8px;
+    margin-bottom: 12px;
+  }
+
+  .service-desc {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.65;
+    margin-bottom: 0;
   }
 
   .service-price {
@@ -634,6 +670,7 @@
     font-weight: 700;
     color: var(--accent);
     font-family: 'Manrope', sans-serif;
+    margin-bottom: 20px;
   }
 
   .service-price span {
@@ -670,11 +707,51 @@
     font-size: 14px;
     color: var(--green);
     font-weight: 500;
+    margin-bottom: 16px;
   }
 
-  .service-barrier::before { content: '→ '; }
+  .service-results {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .service-results li {
+    font-size: 13.5px;
+    color: var(--muted);
+    line-height: 1.55;
+    padding-left: 18px;
+    position: relative;
+    list-style: none;
+  }
+
+  .service-results li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--green);
+    font-weight: 600;
+  }
 
   /* ===================== SCREEN 5 — PROCESS ===================== */
+  .process-human-intro {
+    max-width: 580px;
+    margin-bottom: 56px;
+    padding: 24px 28px;
+    border-left: 3px solid var(--accent);
+    background: rgba(139,94,60,0.04);
+    border-radius: 0 8px 8px 0;
+  }
+
+  .process-human-intro p {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-style: italic;
+    color: var(--deep);
+    line-height: 1.7;
+    margin: 0;
+  }
+
   .process-steps {
     display: flex;
     flex-direction: column;
@@ -1116,6 +1193,32 @@
     .recognition-note::before { font-size: 120px; }
     .recognition-note .note-line-1 { font-size: 18px; }
 
+    /* Review cards — mobile */
+    .reviews-grid { gap: 16px; }
+    .review-card {
+      padding: 28px 22px 22px;
+      background: #fdf8f3;
+      border: none;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(61,42,28,0.08);
+      position: relative;
+      overflow: hidden;
+    }
+    .review-card::before {
+      content: '\201C';
+      font-family: 'Playfair Display', serif;
+      font-size: 96px;
+      line-height: 1;
+      color: var(--accent);
+      opacity: 0.18;
+      position: absolute;
+      top: 8px;
+      left: 14px;
+    }
+    .review-segment { font-size: 10px; letter-spacing: 0.1em; margin-bottom: 14px; }
+    .review-text { font-size: 15px; line-height: 1.7; padding-left: 4px; }
+    .review-result { font-size: 12.5px; border-radius: 8px; padding: 10px 14px; }
+
     /* About */
     .about-stat-row { grid-template-columns: repeat(3, 1fr); }
     .stat-num { font-size: 28px; }
@@ -1284,32 +1387,32 @@
 
   <div class="situations-grid">
     <div class="situation-card">
-      <div class="situation-icon">😮‍💨</div>
+      <div class="situation-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 14s.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg></div>
       <h3>Тревожные мысли не останавливаются перед сном</h3>
       <p>Прокручиваете разговоры, сценарии, ошибки — и не можете выключить голову.</p>
     </div>
     <div class="situation-card">
-      <div class="situation-icon">💔</div>
+      <div class="situation-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/><line x1="12" y1="12" x2="12" y2="12.01"/></svg></div>
       <h3>После измены всё разрушено, но вы не знаете, что делать дальше</h3>
       <p>Уйти или остаться? Как снова доверять — себе, партнёру, кому-то вообще?</p>
     </div>
     <div class="situation-card">
-      <div class="situation-icon">🔄</div>
+      <div class="situation-icon"><svg viewBox="0 0 24 24"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></div>
       <h3>Ссоритесь по одному кругу и выхода не видно</h3>
       <p>Снова те же слова, та же боль, то же молчание после. Как будто ничего не меняется.</p>
     </div>
     <div class="situation-card">
-      <div class="situation-icon">🌫️</div>
+      <div class="situation-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg></div>
       <h3>Не понимаете, чего хотите от жизни</h3>
       <p>Внешне всё нормально, но внутри пусто. Непонятно, куда идти и зачем.</p>
     </div>
     <div class="situation-card">
-      <div class="situation-icon">😶</div>
+      <div class="situation-icon"><svg viewBox="0 0 24 24"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg></div>
       <h3>Выгорели и не можете восстановиться</h3>
       <p>Делаете — но не чувствуете. Отдыхаете — но не отдыхаете. Помогает только на несколько часов.</p>
     </div>
     <div class="situation-card">
-      <div class="situation-icon">👫</div>
+      <div class="situation-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
       <h3>Хотите сохранить отношения, но партнёр не готов идти к психологу</h3>
       <p>Работаем с парами и с каждым отдельно — можно начать с одного.</p>
     </div>
@@ -1318,13 +1421,13 @@
   <div class="recognition-note">
     <div class="recognition-note-inner">
       <div class="note-line-1">
-        <strong>Это не значит, что вы сломлены.</strong><br>
-        Это значит, что вы уже достаточно долго справляетесь в одиночку.
+        <strong>Перемены начинаются не тогда, когда становится легче.</strong><br>
+        А тогда, когда появляется понимание происходящего.
       </div>
       <div class="note-divider"></div>
       <div class="note-line-2">
-        Терапия — не про «рассказать о себе чужому человеку».<br>
-        Это структурированная работа с конкретным результатом.
+        Терапия помогает увидеть причины тревоги, конфликтов и повторяющихся жизненных сценариев,<br>
+        чтобы двигаться дальше более осознанно.
       </div>
     </div>
   </div>
@@ -1339,7 +1442,7 @@
   <div class="about-grid">
     <div class="about-left">
       <div class="section-label">Кто я</div>
-      <h2>Работаю с КПТ и ЭФТ —<br><em>это не разговоры,</em><br>а измеримый результат</h2>
+      <h2>КПТ и ЭФТ помогают не просто говорить о проблеме,<br>а понимать её причины<br><em>и менять привычные сценарии</em></h2>
       <p class="about-lead">
         КПТ и ЭФТ — это не аббревиатуры. Это методы, которые работают с тем,
         <strong>что именно происходит в вашей голове и в паре</strong>, а не с симптомами поверхностно.
@@ -1369,28 +1472,28 @@
 
     <div class="certs-list">
       <div class="cert-item">
-        <div class="cert-icon">🏛️</div>
+        <div class="cert-icon"><svg viewBox="0 0 24 24"><path d="M3 22V9l9-7 9 7v13"/><path d="M9 22V12h6v10"/><rect x="10" y="2" width="4" height="4" rx="1"/></svg></div>
         <div>
           <h4>Член АКПП (Ассоциация КПТ)</h4>
           <p>Профессиональная ассоциация подтверждает квалификацию и соблюдение этических стандартов. Не просто «прошла курс».</p>
         </div>
       </div>
       <div class="cert-item">
-        <div class="cert-icon">💞</div>
+        <div class="cert-icon"><svg viewBox="0 0 24 24"><path d="M12 21C12 21 4 13.5 4 8a8 8 0 0 1 16 0c0 5.5-8 13-8 13z"/><circle cx="12" cy="8" r="2"/></svg></div>
         <div>
           <h4>Член СЭФТ (Эмоционально-фокусированная терапия)</h4>
           <p>ЭФТ — один из наиболее исследованных методов работы с парами. Членство подтверждает специализацию.</p>
         </div>
       </div>
       <div class="cert-item">
-        <div class="cert-icon">💻</div>
+        <div class="cert-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
         <div>
           <h4>Онлайн так же эффективно, как очно</h4>
           <p>Это доказано исследованиями. Вы выбираете место, в котором вам комфортно. Нет привязки к городу и графику.</p>
         </div>
       </div>
       <div class="cert-item">
-        <div class="cert-icon">👫</div>
+        <div class="cert-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
         <div>
           <h4>Один специалист для пары и для каждого</h4>
           <p>Работаем вместе и отдельно. Если партнёр не готов — начинаем с одного. Это тоже работает.</p>
@@ -1417,40 +1520,37 @@
       <div class="service-header">
         <div class="service-type">Индивидуально</div>
         <h3>Личная терапия</h3>
-        <div class="service-price">от 5 000 ₽ <span>/ сессия 50–60 мин</span></div>
+        <p class="service-desc">Для тревоги, эмоционального выгорания, сложных жизненных решений и работы с самооценкой.</p>
       </div>
       <div class="service-body">
-        <div class="service-situations">
-          <span class="sit-tag">Тревога / панические атаки</span>
-          <span class="sit-tag">Выгорание</span>
-          <span class="sit-tag">Низкая самооценка</span>
-          <span class="sit-tag">Прокрастинация</span>
-          <span class="sit-tag">Потеря смысла / себя</span>
-          <span class="sit-tag">Депрессия</span>
-        </div>
+        <div class="service-price">5 000 ₽ <span>/ 50–60 минут онлайн</span></div>
         <div class="service-barrier">
           Работаем с автоматическими мыслями, схемами, ресурсным состоянием — то, что мешает конкретно вам
         </div>
+        <ul class="service-results">
+          <li>Лучше понимать себя и свои потребности</li>
+          <li>Меньше тревоги и внутреннего напряжения</li>
+          <li>Больше ясности в решениях и жизненных выборах</li>
+        </ul>
       </div>
     </div>
 
     <div class="service-card">
       <div class="service-header">
         <div class="service-type">Для пары</div>
-        <h3>Парная / семейная терапия</h3>
-        <div class="service-price">от 7 000 ₽ <span>/ сессия, онлайн</span></div>
+        <h3>Парная терапия</h3>
+        <p class="service-desc">Для конфликтов, потери доверия, эмоциональной дистанции и кризисов отношений.</p>
       </div>
       <div class="service-body">
-        <div class="service-situations">
-          <span class="sit-tag">Конфликты / ссоры</span>
-          <span class="sit-tag">Измена / потеря доверия</span>
-          <span class="sit-tag">Отсутствие близости</span>
-          <span class="sit-tag">Развод / расставание</span>
-          <span class="sit-tag">«Мы не слышим друг друга»</span>
-        </div>
+        <div class="service-price">7 000 ₽ <span>/ онлайн-сессия для пары</span></div>
         <div class="service-barrier">
           Партнёр не готов идти — начинаем с одного. Этот барьер можно обойти, и это работает
         </div>
+        <ul class="service-results">
+          <li>Научиться слышать друг друга без обвинений</li>
+          <li>Восстановить доверие после кризиса</li>
+          <li>Больше взаимопонимания и близости в паре</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -1468,6 +1568,10 @@
     Вы понимаете, что происходит на каждом этапе. И видите, как меняется ситуация.
   </p>
 
+  <div class="process-human-intro">
+    <p>Вам не нужно заранее знать, что говорить или с чего начать. На первой встрече мы спокойно разберёмся в вашей ситуации и определим направление работы.</p>
+  </div>
+
   <div class="process-steps">
     <div class="process-step">
       <div class="step-num">1</div>
@@ -1480,7 +1584,7 @@
       <div class="step-num">2–4</div>
       <div class="step-content">
         <h3>Разбираем ситуацию</h3>
-        <p>Смотрим на паттерны: что запускает тревогу, откуда берутся конфликты, почему одно и то же повторяется. Это не «покопаться в детстве» — это понять механизм.</p>
+        <p>Мы исследуем повторяющиеся паттерны и понимаем, что поддерживает проблему сегодня.</p>
       </div>
     </div>
     <div class="process-step">
