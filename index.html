@@ -2153,8 +2153,37 @@
     <span style="color: rgba(255,255,255,0.2);">•</span>
     <a href="https://max.ru/u/f9LHodD0cOIrHfAIYypy1X4btOPc_3eR12iggTXAmDbYKX226KidIPOpYsQ" target="_blank" style="font-size: 13px; color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">Max</a>
   </div>
-  <div style="font-size: 12px; color: rgba(255,255,255,0.3);">© 2026 Елена Ханина · Все права защищены</div>
+  <div style="font-size: 12px; color: rgba(255,255,255,0.3); display:flex; align-items:center; gap:12px; flex-wrap:wrap; justify-content:center;">
+    <span>© 2026 Елена Ханина · Все права защищены</span>
+    <span style="color: rgba(255,255,255,0.2);">•</span>
+    <a href="#" onclick="openPrivacyPage(event)" style="font-size:12px; color:rgba(255,255,255,0.4); text-decoration:underline; text-underline-offset:3px; transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.7)'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">Политика конфиденциальности</a>
+  </div>
 </footer>
+
+<!-- PRIVACY PAGE -->
+<div id="privacyPage" style="display:none; position:fixed; inset:0; z-index:10000; background:var(--cream); overflow-y:auto;">
+  <div style="max-width:720px; margin:0 auto; padding:60px 24px 80px;">
+    <button onclick="closePrivacyPage()" style="display:inline-flex; align-items:center; gap:8px; background:none; border:none; cursor:pointer; color:var(--brown); font-family:var(--font-body); font-size:15px; margin-bottom:40px; padding:0; opacity:0.7; transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      Вернуться на сайт
+    </button>
+    <h1 style="font-family:var(--font-head); font-size:clamp(28px,5vw,42px); color:var(--brown); margin-bottom:12px;">Политика конфиденциальности</h1>
+    <p style="font-family:var(--font-body); font-size:14px; color:var(--brown-light); margin-bottom:48px;">Сайт: https://elenahanina.ru</p>
+    <div style="font-family:var(--font-body); font-size:16px; line-height:1.8; color:var(--brown);">
+      <p style="margin-bottom:24px;">Ханина Елена Вадимовна гарантирует, что полученная от вас информация никогда и ни при каких условиях не будет передана третьим лицам, за исключением случаев, предусмотренных действующим законодательством Российской Федерации.</p>
+      <h2 style="font-family:var(--font-head); font-size:22px; color:var(--brown); margin:36px 0 12px;">Какие данные собираются</h2>
+      <p style="margin-bottom:24px;">При заполнении формы обратной связи вы указываете имя и контактные данные (телефон или email). Эти сведения необходимы исключительно для того, чтобы специалист мог с вами связаться и ответить на ваш запрос.</p>
+      <h2 style="font-family:var(--font-head); font-size:22px; color:var(--brown); margin:36px 0 12px;">Как используются данные</h2>
+      <p style="margin-bottom:24px;">Ваши контактные данные используются только для ответа на ваше обращение. Они не передаются третьим лицам и не используются в коммерческих целях.</p>
+      <h2 style="font-family:var(--font-head); font-size:22px; color:var(--brown); margin:36px 0 12px;">Cookie</h2>
+      <p style="margin-bottom:24px;">Как и большинство сайтов, elenahanina.ru использует технологию cookie для корректной работы сайта. Cookie не содержат личных данных и не передаются третьим лицам.</p>
+      <h2 style="font-family:var(--font-head); font-size:22px; color:var(--brown); margin:36px 0 12px;">Ссылки на другие сайты</h2>
+      <p style="margin-bottom:24px;">На сайте могут быть ссылки на сторонние ресурсы. Специалист не несёт ответственности за содержание этих сайтов.</p>
+      <h2 style="font-family:var(--font-head); font-size:22px; color:var(--brown); margin:36px 0 12px;">Согласие на обработку персональных данных</h2>
+      <p style="margin-bottom:24px;">Отправляя форму обратной связи, вы подтверждаете согласие на обработку указанных персональных данных в целях получения консультации. Согласие может быть отозвано в любое время путём письменного уведомления.</p>
+    </div>
+  </div>
+</div>
 
 <script>
   // Review expand buttons
@@ -2319,6 +2348,17 @@
 </div>
 
 <script>
+  function openPrivacyPage(e) {
+    e.preventDefault();
+    document.getElementById("privacyPage").style.display = "block";
+    document.body.style.overflow = "hidden";
+    document.getElementById("privacyPage").scrollTop = 0;
+  }
+  function closePrivacyPage() {
+    document.getElementById("privacyPage").style.display = "none";
+    document.body.style.overflow = "";
+  }
+
   function openContactPopup(e) {
     e.preventDefault();
     const popup = document.getElementById('contactPopup');
