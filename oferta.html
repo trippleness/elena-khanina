@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Договор публичной оферты — Ханина Елена</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F5F0E8;
+    --deep: #1A1410;
+    --warm: #2C1F14;
+    --accent: #8B5E3C;
+    --accent-light: #C4956A;
+    --muted: #6B5B4E;
+    --green: #3D5A47;
+    --border: rgba(139,94,60,0.2);
+    --section-bg: #FAF7F2;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--cream);
+    color: var(--deep);
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+  }
+
+  /* ── NAVBAR ── */
+  .navbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(245,240,232,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .navbar-inner {
+    padding: 0 48px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+  .navbar-logo-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    color: var(--deep);
+  }
+  .navbar-logo-sub {
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .back-link:hover { color: var(--accent); }
+  .back-link svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+  @media (max-width: 600px) {
+    .navbar-inner { padding: 0 16px; }
+    .navbar-logo-sub { display: none; }
+  }
+
+  /* ── PAGE LAYOUT ── */
+  .page-wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 112px 40px 96px;
+  }
+
+  /* ── HEADER ── */
+  .doc-eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+  .doc-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--deep);
+    margin-bottom: 10px;
+  }
+  .doc-meta {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .doc-meta span { display: flex; align-items: center; gap: 6px; }
+
+  /* ── CONTENT ── */
+  .doc-section {
+    margin-bottom: 48px;
+  }
+  .doc-section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--deep);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  .doc-text {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+  .doc-text:last-child { margin-bottom: 0; }
+
+  /* Numbered items */
+  .doc-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    margin-bottom: 16px;
+  }
+  .doc-item:last-child { margin-bottom: 0; }
+  .doc-item-num {
+    flex-shrink: 0;
+    min-width: 36px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    padding-top: 2px;
+  }
+  .doc-item-text {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+  .doc-item-text strong {
+    color: var(--deep);
+    font-weight: 600;
+  }
+
+  /* Sub-items (dashes) */
+  .doc-subitems {
+    margin-top: 10px;
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .doc-subitems li {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.65;
+    padding-left: 20px;
+    position: relative;
+  }
+  .doc-subitems li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 400;
+  }
+
+  /* Requisites block */
+  .doc-requisites {
+    background: rgba(139,94,60,0.05);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 24px 28px;
+    margin-top: 8px;
+  }
+  .req-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    flex-wrap: wrap;
+  }
+  .req-row:last-child { margin-bottom: 0; }
+  .req-label {
+    color: var(--muted);
+    min-width: 120px;
+    flex-shrink: 0;
+  }
+  .req-value {
+    color: var(--deep);
+    font-weight: 500;
+  }
+
+  /* Pricing table */
+  .price-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+    font-size: 15px;
+  }
+  .price-table tr {
+    border-bottom: 1px solid var(--border);
+  }
+  .price-table tr:last-child { border-bottom: none; }
+  .price-table td {
+    padding: 16px 0;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .price-table td:last-child {
+    text-align: right;
+    font-weight: 700;
+    font-family: 'Manrope', sans-serif;
+    font-size: 18px;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+
+  /* Notice box */
+  .doc-notice {
+    background: rgba(61,90,71,0.07);
+    border-radius: 8px;
+    padding: 20px 24px;
+    font-size: 14px;
+    color: var(--green);
+    font-weight: 500;
+    line-height: 1.7;
+    margin-top: 32px;
+  }
+  .doc-notice::before {
+    content: '⚠ ';
+  }
+
+  /* ── FOOTER ── */
+  .site-footer {
+    background: var(--warm);
+    padding: 40px 80px;
+    text-align: center;
+  }
+  .site-footer .footer-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: white;
+    margin-bottom: 4px;
+  }
+  .site-footer .footer-role {
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 16px;
+  }
+  .footer-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  .footer-links a {
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: white; }
+  .footer-sep { color: rgba(255,255,255,0.2); }
+  .footer-copy {
+    font-size: 12px;
+    color: rgba(255,255,255,0.3);
+  }
+
+  @media (max-width: 600px) {
+    .page-wrap { padding: 96px 20px 64px; }
+    .site-footer { padding: 40px 20px 24px; }
+    .req-label { min-width: 80px; }
+    .price-table td:last-child { font-size: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="index.html" class="navbar-logo">
+      <div>
+        <div class="navbar-logo-name">Ханина Елена</div>
+        <div class="navbar-logo-sub">Психолог · КПТ · ЭФТ · Онлайн</div>
+      </div>
+    </a>
+    <a href="index.html" class="back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+      На главную
+    </a>
+  </div>
+</nav>
+
+<!-- CONTENT -->
+<main class="page-wrap">
+
+  <div class="doc-eyebrow">Публичный документ</div>
+  <h1 class="doc-title">Договор публичной оферты<br>об оказании психологических услуг</h1>
+  <div class="doc-meta">
+    <span>г. Москва</span>
+    <span>Редакция от 1 июня 2020 г.</span>
+  </div>
+
+  <!-- 1. Общие положения -->
+  <div class="doc-section">
+    <h2 class="doc-section-title">1. Общие положения</h2>
+    <p class="doc-text">
+      Настоящий договор является публичной офертой Ханиной Елены Вадимовны (далее — Исполнитель) и содержит все существенные условия оказания психологических консультаций физическим лицам (далее — Клиент).
+    </p>
+    <p class="doc-text">
+      Акцептом настоящей оферты является оплата Клиентом услуг Исполнителя. С момента оплаты договор считается заключённым на изложенных ниже условиях.
+    </p>
+  </div>
+
+  <!-- 2. Предмет договора -->
+  <div class="doc-section">
+    <h2 class="doc-section-title">2. Предмет договора</h2>
+    <p class="doc-text">
+      Исполнитель оказывает Клиенту психологические консультации (далее — Услуги) в формате индивидуальных или парных онлайн-сессий. Порядок, стоимость и продолжительность услуг определяются Приложением № 1 к настоящему договору.
+    </p>
+  </div>
+
+  <!-- 3. Порядок оплаты -->
+  <div class="doc-section">
+    <h2 class="doc-section-title">3. Стоимость и порядок оплаты</h2>
+    <p class="doc-text">Стоимость услуг по Приложению № 1:</p>
+
+    <table class="price-table">
+      <tr>
+        <td>Индивидуальная психологическая консультация, 60 мин.</td>
+        <td>5 000 ₽</td>
+      </tr>
+      <tr>
+        <td>Работа с парой, 60 мин.</td>
+        <td>7 000 ₽</td>
+      </tr>
+    </table>
+
+    <div class="doc-notice">
+      Актуальные цены указаны на основной странице сайта. При изменении стоимости Исполнитель уведомляет Клиента заблаговременно.
+    </div>
+  </div>
+
+  <!-- 4. Порядок записи и отмены -->
+  <div class="doc-section">
+    <h2 class="doc-section-title">4. Запись, перенос и отмена</h2>
+    <div class="doc-item">
+      <div class="doc-item-num">4.1</div>
+      <div class="doc-item-text">Запись на консультацию осуществляется через мессенджеры (Telegram, WhatsApp) по предварительному согласованию времени.</div>
+    </div>
+    <div class="doc-item">
+      <div class="doc-item-num">4.2</div>
+      <div class="doc-item-text"><strong>Отмена или перенос</strong> возможны не позднее чем за 24 часа до назначенного времени. При более поздней отмене стоимость сессии не возвращается.</div>
+    </div>
+    <div class="doc-item">
+      <div class="doc-item-num">4.3</div>
+      <div class="doc-item-text">В случае опоздания Клиента время опоздания вычитается из продолжительности сессии без изменения стоимости.</div>
+    </div>
+    <div class="doc-item">
+      <div class="doc-item-num">4.4</div>
+      <div class="doc-item-text">Если Исполнитель переносит сессию, Клиент уведомляется не позднее чем за 24 часа до её начала.</div>
+    </div>
+  </div>
+
+  <!-- 5. Права и обязанности -->
+  <div class="doc-section">
+    <h2 class="doc-section-title">5. Права и обязанности сторон</h2>
+
+    <p class="doc-text" style="font-weight:600; color: var(--deep); margin-bottom:12px;">Исполнитель обязан:</p>
+    <div class="doc-item">
+      <div class="doc-item-num">5.1</div>
+      <div class="doc-item-text">Оказывать услуги в соответствии с условиями настоящего договора.</div>
+    </div>
+    <div class="doc-item">
+      <div class="doc-item-num">5.2</div>
+      <div class="doc-item-text"><strong>Сохранять конфиденциальность</strong> консультирования, за исключением случаев, когда совершены или могут быть совершены преступления, предусмотренные Уголовным кодексом РФ.</div>
+    </div>
+
+    <p class="doc-text" style="font-weight:600; color: var(--deep); margin-top:24px; margin-bottom:12px;">Исполнитель вправе:</p>
+    <div class="doc-item">
+      <div class="doc-item-num">5.3</div>
+      <div class="doc-item-text">Использовать материалы консультаций в методических целях — фрагментарно, без указания имён и персональных данных Клиента.</div>
+    </div>
+    <div class="doc-item">
+      <div class="doc-item-num">5.4</div>
+      <div class="doc-item-text">Прекратить оказание услуг при неуважительном общении Клиента, сокрытии факта постановки на учёт в психоневрологическом диспансере, несвоевременной оплате или появлении на сессии в состоянии опьянения.</div>
+    </div>
+
+    <p class="doc-text" style="font-weight:600; color: var(--deep); margin-top:24px; margin-bottom:12px;">Клиент обязан:</p>
+    <div class="doc-item">
+      <div class="doc-item-num">5.5</div>
+      <div class="doc-item-text">Оплатить услуги в соответствии с условиями договора.</div>
+    </div>
+    <div class="doc-item">
+      <div class="doc-item-num">5.6</div>
+      <div class="doc-item-text">Выполнять рекомендации Исполнителя. Условия работы предполагают:
+        <ul class="doc-subitems">
+          <li>подробное и искреннее описание ситуации, состояния и переживаний;</li>
+          <li>прямые ответы на вопросы Исполнителя;</li>
+          <li>выполнение домашних заданий, связанных с запросом.</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="doc-text" style="font-weight:600; color: var(--deep); margin-top:24px; margin-bottom:12px;">Клиент вправе:</p>
+    <div class="doc-item">
+      <div class="doc-item-num">5.7</div>
+      <div class="doc-item-text">Получать услуги в объёме и количестве, предусмотренных договором.</div>
+    </div>
+    <div class="doc-item">
+      <div class="doc-item-num">5.8</div>
+      <div class="doc-item-text">В случае отказа Исполнителя от исполнения договора потребовать возврата денежных средств за ещё не проведённые сессии — за исключением случаев, предусмотренных п. 5.4 настоящего договора.</div>
+    </div>
+  </div>
+
+  <!-- 6. Споры -->
+  <div class="doc-section">
+    <h2 class="doc-section-title">6. Разрешение споров</h2>
+    <p class="doc-text">
+      Споры и претензии по настоящему договору регулируются в соответствии с действующим законодательством Российской Федерации.
+    </p>
+  </div>
+
+  <!-- 7. Реквизиты -->
+  <div class="doc-section">
+    <h2 class="doc-section-title">7. Реквизиты Исполнителя</h2>
+    <div class="doc-requisites">
+      <div class="req-row">
+        <span class="req-label">Статус</span>
+        <span class="req-value">Самозанятая</span>
+      </div>
+      <div class="req-row">
+        <span class="req-label">ФИО</span>
+        <span class="req-value">Ханина Елена Вадимовна</span>
+      </div>
+      <div class="req-row">
+        <span class="req-label">ИНН</span>
+        <span class="req-value">771902948293</span>
+      </div>
+      <div class="req-row">
+        <span class="req-label">Адрес</span>
+        <span class="req-value">105554, г. Москва, ул. Нижняя Первомайская, д. 33</span>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-name">Елена Ханина</div>
+  <div class="footer-role">Семейный психолог · КПТ · ЭФТ · Онлайн-консультации</div>
+  <div class="footer-links">
+    <a href="https://t.me/ElenahaninaPsyLove" target="_blank">Telegram</a>
+    <span class="footer-sep">•</span>
+    <a href="https://wa.me/79168330048" target="_blank">WhatsApp</a>
+    <span class="footer-sep">•</span>
+    <a href="index.html">На главную</a>
+  </div>
+  <div class="footer-copy">© 2026 Елена Ханина · Все права защищены</div>
+</footer>
+
+</body>
+</html>
