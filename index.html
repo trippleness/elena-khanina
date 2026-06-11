@@ -1397,6 +1397,69 @@
     margin: 36px 0 12px;
   }
 
+  /* ===================== BIO SECTION ===================== */
+  .bio-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+    margin-bottom: 64px;
+  }
+  .bio-story { font-size: 16px; color: var(--muted); line-height: 1.85; }
+  .bio-story p { margin-bottom: 20px; }
+  .bio-story p:last-child { margin-bottom: 0; }
+  .bio-badges { display: flex; flex-direction: column; gap: 12px; }
+  .bio-badge-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px 20px;
+    background: rgba(139,94,60,0.05);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+  .bio-badge-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+    margin-top: 5px;
+  }
+  .edu-accordion { display: flex; flex-direction: column; gap: 8px; }
+  .edu-acc-item { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+  .edu-acc-trigger {
+    width: 100%; background: none; border: none;
+    padding: 20px 24px;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    cursor: pointer;
+    font-family: 'Manrope', sans-serif; font-size: 15px; font-weight: 600;
+    color: var(--deep); text-align: left;
+    transition: background 0.2s;
+  }
+  .edu-acc-trigger:hover { background: rgba(139,94,60,0.04); }
+  .edu-acc-trigger.open { background: rgba(139,94,60,0.06); color: var(--accent); }
+  .edu-acc-icon { width: 20px; height: 20px; flex-shrink: 0; stroke: var(--accent); transition: transform 0.25s; }
+  .edu-acc-trigger.open .edu-acc-icon { transform: rotate(180deg); }
+  .edu-acc-body { display: none; padding: 0 24px 20px; background: rgba(139,94,60,0.02); }
+  .edu-acc-body.open { display: block; }
+  .edu-acc-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0; }
+  .edu-acc-list li {
+    display: flex; gap: 12px; align-items: flex-start;
+    font-size: 14px; color: var(--muted); line-height: 1.6;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .edu-acc-list li:last-child { border-bottom: none; }
+  .edu-acc-list li::before {
+    content: ''; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent-light); flex-shrink: 0; margin-top: 6px;
+  }
+  .edu-acc-doc { display: block; margin-top: 3px; font-size: 12px; font-weight: 600; color: var(--accent); }
+  @media (max-width: 768px) { .bio-grid { grid-template-columns: 1fr; gap: 40px; } }
+
   /* Oferta-specific styles */
   .doc-eyebrow {
     font-size: 12px;
@@ -1545,6 +1608,7 @@
     <ul class="navbar-links">
       <li><a href="#situations">Для кого</a></li>
       <li><a href="#about">О методах</a></li>
+      <li><a href="#bio">Обо мне</a></li>
       <li><a href="#services">Услуги</a></li>
       <li><a href="#process">Как работаем</a></li>
       <li><a href="#reviews">Отзывы</a></li>
@@ -1564,6 +1628,7 @@
   <ul>
     <li><a href="#situations">Для кого</a></li>
     <li><a href="#about">О методах</a></li>
+    <li><a href="#bio">Обо мне</a></li>
     <li><a href="#services">Услуги</a></li>
     <li><a href="#process">Как работаем</a></li>
     <li><a href="#reviews">Отзывы</a></li>
@@ -1660,6 +1725,97 @@
         Терапия помогает увидеть причины тревоги, конфликтов и повторяющихся жизненных сценариев, а также составить план действий — чтобы двигаться дальше осознанно и замечать позитивные изменения в жизни.
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ЭКРАН — ОБО МНЕ
+     ============================================================ -->
+<section class="section section-alt" id="bio">
+  <div class="section-label">Обо мне</div>
+  <h2 class="section-title">Путь в профессию<br>и <em>профессиональное развитие</em></h2>
+
+  <div class="bio-grid">
+    <div class="bio-story">
+      <p>Мечта стать психологом пришла ко мне давно — в советском детстве, когда мне было 12 лет. Меня завораживали вопросы: как находить взаимопонимание, что делать, чтобы общение приносило желаемые результаты, как разговаривать так, чтобы тебя слышали.</p>
+      <p>В старших классах меня отговорили от этого пути. Я пошла в Московский Институт управления на экономиста — надёжная профессия, хорошая математика. Но к своей мечте я всё равно вернулась — уже в зрелом возрасте. Пошла учиться, почти сразу начала практиковать. И вот никак не могу остановиться.</p>
+      <p>Семейный психолог, когнитивно-поведенческий психолог, психолог центра BeCBT с 2019 года. Частная практика — с 2012 года.</p>
+    </div>
+    <div class="bio-badges">
+      <div class="bio-badge-item"><div class="bio-badge-dot"></div><span>Преподаватель курса «КПТ-коучинг пар и отношений» в АКПП; соведущая базового курса «Системный КПТ-коучинг»</span></div>
+      <div class="bio-badge-item"><div class="bio-badge-dot"></div><span>Член СЭФТ и ICEEFT (международный центр по ЭФТ)</span></div>
+      <div class="bio-badge-item"><div class="bio-badge-dot"></div><span>Член Ассоциации КПП и Ассоциации русскоязычных коучей</span></div>
+      <div class="bio-badge-item"><div class="bio-badge-dot"></div><span>Спикер CBT FORUM в 2023, 2024 и 2025 году</span></div>
+      <div class="bio-badge-item"><div class="bio-badge-dot"></div><span>Автор статей по системному КПТ-коучингу в работе с парой (сборники CBTFORUM 2023 и 2025)</span></div>
+      <div class="bio-badge-item"><div class="bio-badge-dot"></div><span>Ведущая тренингов: «Азбука уверенного общения», «Радость быть собой», «Мужчины и женщины: азбука общения», «Эффективное общение в супружеской паре»</span></div>
+    </div>
+  </div>
+
+  <div class="section-label" style="margin-bottom:24px;">Образование и сертификаты</div>
+  <div class="edu-accordion">
+
+    <div class="edu-acc-item">
+      <button class="edu-acc-trigger" onclick="toggleAcc(this)">
+        Высшее образование
+        <svg class="edu-acc-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="edu-acc-body">
+        <ul class="edu-acc-list">
+          <li><div>Православный Институт святого Иоанна Богослова, факультет психологии<span class="edu-acc-doc">Диплом специалиста — психолог, преподаватель психологии</span></div></li>
+          <li><div>Московский институт управления — экономист<span class="edu-acc-doc">Диплом о высшем образовании</span></div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="edu-acc-item">
+      <button class="edu-acc-trigger" onclick="toggleAcc(this)">
+        КПТ и схема-терапия
+        <svg class="edu-acc-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="edu-acc-body">
+        <ul class="edu-acc-list">
+          <li><div>Ассоциация КПТ — базовый, продвинутый и супервизионный курсы КПТ<span class="edu-acc-doc">Удостоверения о повышении квалификации</span></div></li>
+          <li><div>Диплом о профессиональной переподготовке «КПТ в психологическом консультировании»<span class="edu-acc-doc">Диплом о профессиональной переподготовке</span></div></li>
+          <li><div>Ассоциация КПТ — современная интегративная КПТ депрессий (курс Роберта Лихи)<span class="edu-acc-doc">Сертификат</span></div></li>
+          <li><div>Ассоциация КПТ — КПТ пар Ф. Даттилио; односессионная терапия (SST) Уинди Драйдена<span class="edu-acc-doc">Сертификат</span></div></li>
+          <li><div>Санкт-Петербургский Институт Схематерапии — сертификационный курс<span class="edu-acc-doc">Сертификат</span></div></li>
+          <li><div>Обучающий центр «Качество жизни» — базовый и продвинутый курсы по схема-терапии в работе с парами<span class="edu-acc-doc">Сертификаты, в т.ч. международного образца; удостоверения о повышении квалификации</span></div></li>
+          <li><div>Институт Бека — «Основы КПТ», «КПТ тревоги» (сертификационное обучение с 2023 г.)<span class="edu-acc-doc">Сертификаты</span></div></li>
+          <li><div>Центр контекстуальной поведенческой терапии — Терапия принятия и ответственности (ACT), базовый курс<span class="edu-acc-doc">Сертификат</span></div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="edu-acc-item">
+      <button class="edu-acc-trigger" onclick="toggleAcc(this)">
+        ЭФТ и семейная терапия
+        <svg class="edu-acc-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="edu-acc-body">
+        <ul class="edu-acc-list">
+          <li><div>ICEEFT и Центр Системной Семейной Терапии — базовый курс по ЭФТ<span class="edu-acc-doc">Сертификат</span></div></li>
+          <li><div>Институт групповой и семейной психологии и психотерапии — системная семейная терапия, двухгодичная программа<span class="edu-acc-doc">Сертификат</span></div></li>
+          <li><div>Общество семейных консультантов и психотерапевтов — «Системная семейная терапия субличностей»<span class="edu-acc-doc">Сертификат</span></div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="edu-acc-item">
+      <button class="edu-acc-trigger" onclick="toggleAcc(this)">
+        Коучинг и гештальт
+        <svg class="edu-acc-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="edu-acc-body">
+        <ul class="edu-acc-list">
+          <li><div>ICP-Centre — профессиональный коучинг<span class="edu-acc-doc">Сертификаты ICF</span></div></li>
+          <li><div>Ассоциация русскоязычных коучей — «Супервизор коучей»<span class="edu-acc-doc">Сертификат</span></div></li>
+          <li><div>Московский институт психоанализа — «Гендерное психологическое консультирование и профессиональный коучинг»<span class="edu-acc-doc">Диплом о профессиональной переподготовке</span></div></li>
+          <li><div>Московский Институт Гештальта и Психодрамы (МИГИП) — введение в гештальт-терапию и психодраму<span class="edu-acc-doc">Удостоверение о повышении квалификации</span></div></li>
+          <li><div>Институт современных психологических технологий — «Актуальные проблемы психологического консультирования»<span class="edu-acc-doc">Удостоверение о повышении квалификации</span></div></li>
+        </ul>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -2257,6 +2413,14 @@
      JAVASCRIPT
      ============================================================ -->
 <script>
+  // ── Accordion ──
+  function toggleAcc(btn) {
+    const body = btn.nextElementSibling;
+    const isOpen = btn.classList.contains('open');
+    btn.classList.toggle('open', !isOpen);
+    body.classList.toggle('open', !isOpen);
+  }
+
   // ── Review expand ──
   document.querySelectorAll('.review-expand-btn').forEach(btn => {
     const text = btn.previousElementSibling;
