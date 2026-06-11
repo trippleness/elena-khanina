@@ -141,6 +141,13 @@
   }
   .navbar-cta-btn:hover { background: var(--warm); color: white; }
 
+  @media (max-width: 1100px) {
+    .navbar-links { gap: 18px; }
+    .navbar-links a { font-size: 12px; }
+    .navbar-logo-sub { display: none; }
+    .navbar-cta-btn { padding: 9px 14px; font-size: 12px; }
+  }
+
   @media (max-width: 900px) {
     .navbar-cta-btn { display: none; }
     .navbar-inner { padding: 0 24px; grid-template-columns: auto 1fr auto; }
